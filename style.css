@@ -17,10 +17,22 @@
 
 body {
     font-family: 'Cairo', sans-serif;
-    background-color: var(--soft-pink);
+    background-color: var(--soft-pink) !important;
     color: var(--text-color);
     overflow-x: hidden;
     direction: rtl;
+    background-image: none !important; /* إلغاء أي خلفية قديمة */
+    color: #5d4037 !important; /* لون الخط البني الهادي */
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #fce4ec !important;
+        color: #5d4037 !important;
+    }
+    .timeline-item {
+        background-color: #ffffff !important;
+    }
 }
 
 /* الستارة (Overlay) */
@@ -139,12 +151,13 @@ body {
 
 /* Container الكارت الأساسي - تأكد إنه Flexbox محترم */
 .timeline-item {
-    background: white;
+    background: #ffffff !important;
+    border: 1px solid rgba(240, 98, 146, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
     /* تأكد إنه أبيض! */
     margin: 30px auto;
     /* سنتره وتوسيع */
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(240, 98, 146, 0.15);
     overflow: hidden;
     /* أهم خاصية */
     max-width: 900px;
@@ -196,9 +209,14 @@ body {
 }
 
 .timeline-item p {
-    color: var(--text-color);
+    color: var(--text-color) !important;
     font-size: 1.1rem;
     line-height: 1.8;
+}
+
+.timeline-item h3, .section-title, .main-title {
+    color: #f06292 !important; 
+    text-shadow: none !important; /* إلغاء أي ظل غامق */
 }
 
 @media (max-width: 767px) {
