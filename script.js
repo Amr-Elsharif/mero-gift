@@ -1,6 +1,7 @@
 const startBtn = document.getElementById('start-btn');
 const overlay = document.getElementById('welcome-overlay');
 const audio = document.getElementById('bgMusic');
+audio.load();
 
 startBtn.addEventListener('click', () => {
     // 1. تشغيل الصوت فوراً مع الكليك
