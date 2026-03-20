@@ -1,4 +1,3 @@
-// audio.load();
 const startBtn = document.getElementById('start-btn');
 const overlay = document.getElementById('welcome-overlay');
 const audio = document.getElementById('bgMusic');
