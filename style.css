@@ -137,67 +137,93 @@ body {
     margin-top: 5px;
 }
 
-/* تنسيق الـ Container الرئيسي للكارت */
+/* Container الكارت الأساسي - تأكد إنه Flexbox محترم */
 .timeline-item {
     background: white;
-    margin-bottom: 30px;
+    /* تأكد إنه أبيض! */
+    margin: 30px auto;
+    /* سنتره وتوسيع */
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(240, 98, 146, 0.15);
     overflow: hidden;
+    /* أهم خاصية */
+    max-width: 900px;
+    /* مقاس مناسب للكمبيوتر */
+    width: 95%;
+    /* عشان مياكلش الشاشة ع الموبايل */
 
-    /* هذا هو الحل السحري! */
+    /* 👇 لضبط المحاذاة من فوق دايماً وجنب بعض 👇 */
     display: flex;
     flex-direction: row;
-    /* عشان يبقوا جمب بعض */
+    /* جنب بعض */
     align-items: flex-start;
-    /* سنتره النص جمب الصورة */
+    /* بيبدأ من فوق */
+    position: relative;
+    /* أمان من غيرabsolute */
 }
 
-/* تنسيق الصورة - تحديد الارتفاع الأول */
-.timeline-item img {
-    width: 50%;
-    /* أو المقاس اللي يريحك */
-    height: 300px;
-    /* الارتفاع الموحد لكل الصور! غيره زي ما تحب */
-
-    /* عشان الصورة متتبططش ولا تتمط مهما كان حجمها */
-    object-fit: cover;
-    object-position: center;
-    /* سنتره الصورة */
-}
-
-/* تعديل الـ selector ليشمل الفيديو */
+/* تنسيق الميديا (صورة أو فيديو) */
+.timeline-item img,
 .timeline-item video {
     width: 45%;
+    /* عرض مناسب */
     height: 400px;
-    /* الارتفاع الموحد */
+    /* ارتفاع موحد شيك */
     object-fit: cover;
-    /* السحر اللي بيحافظ على الأبعاد */
+    /* بيحافظ على الأبعاد */
     object-position: center;
-    background-color: #000;
-    /* خلفية سوداء لو الفيديو بيحمل */
+    border-radius: 20px 0 0 20px;
+    /* دوران زوايا من جهة الصورة */
+    display: block;
+    /* أهم حاجة عشان الـ inline */
 }
 
-/* تنسيق النص عشان ياخد باقي المساحة */
+/* تنسيق النص */
 .timeline-item .content {
     width: 55%;
-    /* باقي الـ 100% */
-    padding: 25px;
-    padding-top: 30px;
-    /* مسافة من فوق عشان التنسيق */
+    padding: 30px;
+    padding-top: 40px;
+    /* مسافة من فوق */
     text-align: right;
-    /* عشان المحاذاة العربي */
+    box-sizing: border-box;
+    /* عشان الـ padding ميطلعهوش بره الكارت */
 }
 
 .timeline-item h3 {
     color: var(--deep-pink);
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 .timeline-item p {
     color: var(--text-color);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+    .main-title {
+        font-size: 4rem;
+    }
+
+    .timeline-item {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .timeline-item img,
+    .timeline-item video {
+        width: 100%;
+        height: 250px;
+        border-radius: 20px 20px 0 0;
+        border-bottom: 5px solid white;
+    }
+
+    .timeline-item .content {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
 }
 
 .video-section {
@@ -280,44 +306,4 @@ body {
 
 .swiper-pagination-bullet-active {
     background: var(--deep-pink) !important;
-}
-
-@media (min-width: 768px) {
-    .main-title {
-        font-size: 4rem;
-    }
-
-    .timeline-item {
-        flex-direction: column; /* فوق بعض على الموبايل */
-        align-items: center; /* سنتره المحتوى */
-    }
-
-    .timeline-item img, 
-    .timeline-item video {
-        width: 100%; /* العرض الكامل */
-        height: 250px; /* ارتفاع أقل للموبايل */
-        border-bottom: 5px solid var(--soft-pink); /* فاص شيك */
-    }
-
-    .timeline-item .content {
-        width: 100%;
-        padding: 20px;
-        text-align: center; /* سنتره النص على الموبايل */
-    }
-}
-
-/* للموبايل: نخليهم فوق بعض */
-@media (max-width: 767px) {
-    .timeline-item {
-        flex-direction: column-reverse;
-    }
-
-    .timeline-item video,
-    .timeline-item .content {
-        width: 100%;
-    }
-
-    .timeline-item video {
-        height: 300px;
-    }
 }
