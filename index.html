@@ -1,84 +1,249 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>أجمل 4 سنين</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة حياتنا 😍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div id="welcome-overlay">
+        <div class="overlay-content">
+            <div class="heart-icon">❤️</div>
+            <h1>جاهزة للمفاجأة؟</h1>
+            <p>اضغطي على الزرار عشان تبدأ الحكاية</p>
+            <button id="start-btn">افتحي الهدية ✨</button>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="/assets/Ahlan-bel3ed.mp3" type="audio/mpeg">
+    </audio>
+
     <section class="cover">
-      <div class="cover-content">
-        <h1 class="main-title">كل سنة وإنتي معايا</h1>
-        <p class="subtitle">اسحبي الشاشة لتحت..</p>
-        <div class="scroll-down"></div>
-      </div>
+        <div class="cover-content">
+            <p class="main-title">كل سنة وإنتي معايا 😍🫂</p>
+            <p class="subtitle">يا بنت قلبي 🫣</p>
+        </div>
     </section>
 
     <section class="timeline">
-      <h2 class="section-title">حكايتنا في صور</h2>
+        <h2 class="section-title">حكايتنا في صور</h2>
 
-      <div class="timeline-item">
-        <img src="photo1.jpg" alt="السنة الأولى" />
-        <div class="content">
-          <h3>أول سطر في حكايتنا</h3>
-          <p>
-            من 4 سنين، كانت أجمل صدفة غيرت مجرى حياتي كلها. يومها عرفت إن في
-            حاجات تستاهل نعيش عشانها.
-          </p>
+        <div class="timeline-item">
+            <img src="assets/أول عيد ميلاد.jpeg" alt="أول عيد ميلاد">
+            <div class="content">
+                <h3>أول عيد ميلاد مع بعض</h3>
+                <p>دي الصورة الوحيدة ال معايا من أول وأحلى عيد ميلاد لأحلى مرمر ف الدنيا.</p>
+            </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <img src="photo2.jpg" alt="السنة الثانية" />
-        <div class="content">
-          <h3>سند وبيت</h3>
-          <p>
-            السنة اللي عرفت فيها إنك مش بس خطيبتي، إنتي السند والضحكة اللي بتهون
-            عليا أي صعب.
-          </p>
+        <div class="timeline-item">
+            <img src="assets/أول خروجة ف بازوكا.jpeg" alt="أول خروجة ف بازوكا">
+            <div class="content">
+                <h3>أول خروجة مع بعض ف مطعم بازوكا</h3>
+                <p>كانت أحلى خروجة ف حياتي, واحنا بنفطر بره مع تكبيرات العيد.</p>
+            </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <img src="photo3.jpg" alt="السنة الثالثة" />
-        <div class="content">
-          <h3>كبرنا سوا</h3>
-          <p>
-            واجهنا تحديات، كبرنا، واتعلمنا إن الحب الحقيقي مواقف وأمان.. مفيش حد
-            غيرك يقدر يكملني.
-          </p>
+        <div class="timeline-item">
+            <img src="assets/خروجة رأس السنة.jpeg" alt="خروجة رأس السنة">
+            <div class="content">
+                <h3>خروجة رأس السنة</h3>
+                <p>دي بقى لحظة الخروجة ال مش هتتنسي أبدا, بقت محفورة ف ذكرياتنا, مش هي الوحيدة علفكرة ال متخانقناش فيها,
+                    والذكريات ال هنا يثبت أهو</p>
+            </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <img src="photo4.jpg" alt="السنة الرابعة" />
-        <div class="content">
-          <h3>خطوة نحو بيتنا</h3>
-          <p>
-            وإحنا بنختار ألوان شقتنا، اتأكدت إن أحلامي كلها بتتلخص في سقف واحد
-            يجمعنا. فاضل تكة ونبدأ الرحلة.
-          </p>
+        <div class="timeline-item">
+            <img src="assets/خروجة شم النسيم.jpeg" alt="خروجة شم النسيم">
+            <div class="content">
+                <h3>خروجة شم النسيم</h3>
+                <p>ودي بقى الخروجة المميزة ال كلنا واتمرجحنا فيها, على الرغم ان اتخانقنا فيها بس كانت لطيفة برضو </p>
+            </div>
         </div>
-      </div>
+
+        <div class="timeline-item">
+            <img src="assets/خروجة واحد كوفتا.jpeg" alt="خروجة واحد كوفتا">
+            <div class="content">
+                <h3>خروجة واحد كوفتا</h3>
+                <p>دي كانت خروجة حلوة برضو بعد ما اتكسينا للخطوبة باين, وكانت من غير خناق أهي </p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <img src="assets/ميلاد العشرين.jpeg" alt="عيد ميلادك العشرين">
+            <div class="content">
+                <h3>عيد ميلادك العشرين</h3>
+                <p>دي بقى لحظة تاني او تالت عيد ميلاد لروح قلبي</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <img src="assets/ماكيت عيد الميلاد.jpeg" alt="ماكيت عيد الميلاد">
+            <div class="content">
+                <h3>ماكيت عيد الميلاد</h3>
+                <p>ودي بقى طلعت فيها روح الفنانة ال جواكي, وكانت مفاجأة كرييتف أوي.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <img src="assets/فرح هيما.jpeg" alt="فرح هيما">
+            <div class="content">
+                <h3>فرح هيما</h3>
+                <p>دي بقى لما كنا آخر نزاهة ف فرح خالك هيما</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <img src="assets/فرح واد مجدي واحنا آخر شياكة.jpeg" alt="فرح واد مجدي واحنا آخر شياكة">
+            <div class="content">
+                <h3>فرح واد مجدي</h3>
+                <p>دي بقى لما كنا آخر شياكة</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <img src="assets/الدهب.jpeg" alt="الدهب">
+            <div class="content">
+                <h3>الدهب</h3>
+                <p>الدهب ال متعذب معانا ف كل خنافة 🥺</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <video autoplay loop muted playsinline poster="assets/فرح واد مجدي واحنا آخر شياكة.jpeg">
+                <source src="assets/ملخص حياتنا.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+
+            <div class="content">
+                <h3>العادة الجميلة بتاعتنا</h3>
+                <p>دا بقى ملخص حياتنا مع بعض 😂</p>
+            </div>
+        </div>
     </section>
 
+    <section class="swiper-section">
+        <h2 class="section-title">لحظات الخطوبة 💍</h2>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/غلاف البوم الخطوبة.jpeg" alt="غلاف البوم الخطوبة">
+                    <div class="slide-caption">أجمل يوم في حياتي.. يوم ما بقينا لبعض رسمياً</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="assets/تحضيرات الخطوبة.mp4" type="video/mp4">
+                        متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                    <div class="slide-caption">تحضيرات الخطوبة </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/البرنسيسة بتاعتي.jpeg" alt="البرنسيسة بتاعتي">
+                    <div class="slide-caption">البرنسيسة بتاعتي </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/جمدان الخطوبة.jpeg" alt="جمدان الخطوبة">
+                    <div class="slide-caption">جمدان الخطوبة, تفاصيل الفستان والورد يخطفوا القلب</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/وانتي مكسوفة ف السيشن.jpeg" alt="وانتي مكسوفة ف اليسشن">
+                    <div class="slide-caption">وانتي مكسوفة ف اليشن</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/التارة.jpeg" alt="التارة">
+                    <div class="slide-caption">أحلى ذكرى مع أحلى مفاجأة منك مع أحلى وأجمل تارة</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/الدبل.jpeg" alt="الدبل">
+                    <div class="slide-caption">الدبل 🫣🥰</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/الصنية.jpeg" alt="الصنية">
+                    <div class="slide-caption">الصنية 😍</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/خلفية الساعة.jpeg" alt="خلفية الساعة">
+                    <div class="slide-caption">خلفية الساعة 🕒</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/عظمة سيشن الخطوبة.jpeg" alt="عظمة سيشن الخطوبة">
+                    <div class="slide-caption">عظمة سيشن الخطوبة</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/قلبي.jpeg" alt="قلبي">
+                    <div class="slide-caption">قلبي ❤️</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/وانتي متشعلقة فيا.jpeg" alt="وانتي متشعلقة فيا">
+                    <div class="slide-caption">وانتي متشعلقة فيا 😂🫂</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/وانتي بتخنقيني.jpeg" alt="وانتي بتخنقيني">
+                    <div class="slide-caption">وانتي بتخنقيني 😂</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="assets/تلبيس الدبل.mp4" type="video/mp4">
+                        متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                    <div class="slide-caption">لحظة تلبيس الدبل 🥹</div>
+                </div>
+
+                <div class="swiper-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="assets/الفيرست لوك الجامد.mp4" type="video/mp4">
+                        متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                    <div class="slide-caption">الفيرست لوك الجامد 🫣😍</div>
+                </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- <section class="video-section">
+        <h2 class="section-title">فيديو ذكرى لينا</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section> -->
+
     <section class="message">
-      <div class="message-content">
-        <h2>إنتي أغلى حاجة عندي</h2>
-        <p>
-          كل سنة وإنتي عيدي.. شكراً إنك اخترتيني أكون شريك حياتك، وبحيك على كل
-          ثانية بنينا فيها سوا. بحبك.
-        </p>
-      </div>
+        <div class="message-content">
+            <h2>إنتي أغلى حاجة عندي</h2>
+            <p>كل سنة وإنتي عيدي.. بحبك على كل ثانية بنينا فيها سوا.</p>
+        </div>
     </section>
 
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
