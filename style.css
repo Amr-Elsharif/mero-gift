@@ -1,68 +1,313 @@
 :root {
-    --vanilla: #f3e5d8;
-    --white: #faf9f6;
-    --gray: #4a4a4a;
-    --black: #1a1a1a;
-    --gold: #c5a059;
+    --soft-pink: #fce4ec;
+    /* Rose background */
+    --deep-pink: #f06292;
+    /* Main accents */
+    --gold: #d4af37;
+    --white: #ffffff;
+    --text-color: #5d4037;
+    /* Brownish gray for readability */
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Cairo', sans-serif;
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--soft-pink);
+    color: var(--text-color);
     overflow-x: hidden;
-    line-height: 1.6;
     direction: rtl;
 }
 
-/* الورد - Fixed position لتجنب مشاكل السكرول */
+/* الستارة (Overlay) */
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    color: white;
+    transition: 0.8s ease-in-out;
+    text-align: center;
+}
+
+.heart-icon {
+    font-size: 4rem;
+    animation: pulse 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+#start-btn {
+    padding: 15px 40px;
+    font-family: 'Cairo';
+    font-size: 1.3rem;
+    background: white;
+    border: none;
+    border-radius: 50px;
+    color: var(--deep-pink);
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+#start-btn:hover {
+    transform: scale(1.1);
+    background: var(--deep-pink);
+    color: white;
+}
+
+/* بتلات ورد Pink & Rose */
 .flower {
     position: fixed;
-    top: -10px;
-    background-color: var(--vanilla);
-    border-radius: 50% 0 50% 50%;
-    opacity: 0.6;
-    pointer-events: none;
+    top: -20px;
+    background: linear-gradient(135deg, #f48fb1 0%, #ffc107 100%);
+    border-radius: 100% 0% 100% 100%;
     z-index: 9999;
+    pointer-events: none;
     animation: fall linear forwards;
 }
 
 @keyframes fall {
-    to { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+    to {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .cover {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('cover.jpg') no-repeat center center/cover;
-    display: flex; justify-content: center; align-items: center; text-align: center; color: white;
+    background: linear-gradient(rgba(240, 98, 146, 0.4), rgba(240, 98, 146, 0.4)), url('cover.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
-.main-title { font-size: 2.5rem; margin-bottom: 10px; }
-.subtitle { color: var(--vanilla); letter-spacing: 2px; }
+.main-title {
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
 
-.timeline { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title::after { content: ''; display: block; width: 40px; height: 2px; background: var(--gold); margin: 10px auto; }
+.subtitle {
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
 
+.timeline {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: var(--deep-pink);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title::after {
+    content: '🌸';
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* تنسيق الـ Container الرئيسي للكارت */
 .timeline-item {
-    background: white; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    overflow: hidden; transition: 0.3s;
+    background: white;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(240, 98, 146, 0.15);
+    overflow: hidden;
+
+    /* هذا هو الحل السحري! */
+    display: flex;
+    flex-direction: row;
+    /* عشان يبقوا جمب بعض */
+    align-items: flex-start;
+    /* سنتره النص جمب الصورة */
 }
 
-.timeline-item img { width: 100%; height: 250px; object-fit: cover; }
-.timeline-item .content { padding: 25px; }
-.timeline-item h3 { color: var(--black); margin-bottom: 10px; }
-.timeline-item p { color: var(--gray); font-size: 0.95rem; }
+/* تنسيق الصورة - تحديد الارتفاع الأول */
+.timeline-item img {
+    width: 50%;
+    /* أو المقاس اللي يريحك */
+    height: 300px;
+    /* الارتفاع الموحد لكل الصور! غيره زي ما تحب */
 
-.message { background: var(--black); color: var(--vanilla); padding: 80px 20px; text-align: center; }
-.message h2 { color: white; margin-bottom: 15px; }
+    /* عشان الصورة متتبططش ولا تتمط مهما كان حجمها */
+    object-fit: cover;
+    object-position: center;
+    /* سنتره الصورة */
+}
 
-/* Responsive */
+/* تعديل الـ selector ليشمل الفيديو */
+.timeline-item video {
+    width: 45%;
+    height: 400px;
+    /* الارتفاع الموحد */
+    object-fit: cover;
+    /* السحر اللي بيحافظ على الأبعاد */
+    object-position: center;
+    background-color: #000;
+    /* خلفية سوداء لو الفيديو بيحمل */
+}
+
+/* تنسيق النص عشان ياخد باقي المساحة */
+.timeline-item .content {
+    width: 55%;
+    /* باقي الـ 100% */
+    padding: 25px;
+    padding-top: 30px;
+    /* مسافة من فوق عشان التنسيق */
+    text-align: right;
+    /* عشان المحاذاة العربي */
+}
+
+.timeline-item h3 {
+    color: var(--deep-pink);
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.video-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 6px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.message {
+    background: var(--deep-pink);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.swiper-section {
+    padding: 40px 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(240, 98, 146, 0.2);
+}
+
+.swiper-slide {
+    position: relative;
+    background: #fff;
+}
+
+.swiper-slide img,
+.swiper-slide video {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    /* عشان مياكلش الشاشة كلها لو الصورة طويلة */
+    object-fit: contain;
+    background-color: #fce4ec
+}
+
+.slide-caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(240, 98, 146, 0.8);
+    /* لون روز شفاف */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* تلوين أزرار السويبر للـ Gold */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--gold) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--deep-pink) !important;
+}
+
 @media (min-width: 768px) {
-    .main-title { font-size: 4rem; }
-    .timeline-item { display: flex; align-items: center; }
-    .timeline-item img { width: 40%; height: 300px; }
-    .timeline-item .content { width: 60%; }
+    .main-title {
+        font-size: 4rem;
+    }
+
+    .timeline-item {
+        display: flex;
+    }
+
+    .timeline-item img {
+        width: 45%;
+    }
+}
+
+/* للموبايل: نخليهم فوق بعض */
+@media (max-width: 767px) {
+    .timeline-item {
+        flex-direction: column-reverse;
+    }
+
+    .timeline-item video,
+    .timeline-item .content {
+        width: 100%;
+    }
+
+    .timeline-item video {
+        height: 300px;
+    }
 }
