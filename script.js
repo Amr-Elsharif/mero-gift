@@ -1,13 +1,20 @@
+audio.load();
 const startBtn = document.getElementById('start-btn');
 const overlay = document.getElementById('welcome-overlay');
 const audio = document.getElementById('bgMusic');
 
 startBtn.addEventListener('click', () => {
-    audio.play();
+    // 1. تشغيل الصوت فوراً مع الكليك
+    audio.play().then(() => {
+        console.log("Music is playing!");
+    }).catch(error => {
+        console.log("Playback failed:", error);
+    });
+
+   // 2. إخفاء الستارة
     overlay.style.opacity = '0';
     setTimeout(() => {
         overlay.style.display = 'none';
-        // ابدأ الورد هنا بعد الكليكة
         setInterval(createFlower, 450);
     }, 500);
 });
