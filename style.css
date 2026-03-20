@@ -288,11 +288,21 @@ body {
     }
 
     .timeline-item {
-        display: flex;
+        flex-direction: column; /* فوق بعض على الموبايل */
+        align-items: center; /* سنتره المحتوى */
     }
 
-    .timeline-item img {
-        width: 45%;
+    .timeline-item img, 
+    .timeline-item video {
+        width: 100%; /* العرض الكامل */
+        height: 250px; /* ارتفاع أقل للموبايل */
+        border-bottom: 5px solid var(--soft-pink); /* فاص شيك */
+    }
+
+    .timeline-item .content {
+        width: 100%;
+        padding: 20px;
+        text-align: center; /* سنتره النص على الموبايل */
     }
 }
 
